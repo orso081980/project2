@@ -1,0 +1,29 @@
+﻿extends layout
+
+block content
+    div(class='container')
+        div(class='collapse navbar-collapse')
+            a(href='/products', title='List Products') List Products
+        h2 Edit Product
+        form(method='post', action='/products/edit/#{product._id}')
+            div(class='col-lg-8 col-lg offset-2')
+                div(class='row control-group')
+                    label Venue
+                    input(name='venue', required, placeholder='venue', value='#{product.venue}')
+                div(class='row control-group')
+                    label Day
+                    textarea(name='day', required, placeholder='day', value='#{product.day}')
+                div(class='row control-group')
+                    label Price
+                    input(name='price', required, placeholder='price', type='number' value='#{product.price}')
+                div(class='row control-group')
+                    label Description
+                    input(name='description', required, placeholder='description', value='#{product.description}')
+                div(class='row control-group')
+                    label Rating
+                    input(name='rating', required, placeholder='rating', type='number', value='#{product.venue}')
+                div(class='row control-group')
+                    label type
+                    input(name='type', required, placeholder='type', value='#{product.venue}')
+                input(type='hidden', name='id' value='#{product._id}')
+                input(type='submit', value='Update Product')

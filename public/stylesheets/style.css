@@ -1,0 +1,14 @@
+.container {
+	width: 100%;
+	background:red;
+	animation:myfirst 20s;
+	-moz-animation:myfirst 20s infinite; /* Firefox */
+	-webkit-animation:myfirst 20s infinite; /* Safari and Chrome */
+	color:white;
+}
+.nav>li>a {
+  color: white;
+}
+
+@-webkit-keyframes myfirst /* Firefox */
+{0%{background-color:#1ba3de}16%{background-color:#25bdae}34%{background-color:#a06fb0}50%{background-color:#f067a6}66%{background-color:#f79421}84%{background-color:#e6ba20}100%{background-color:#1ba3de}}@-moz-keyframes colors{0%{background-color:#1ba3de}16%{background-color:#25bdae}34%{background-color:#a06fb0}50%{background-color:#f067a6}66%{background-color:#f79421}84%{background-color:#e6ba20}100%{background-color:#1ba3de}}@-ms-keyframes colors{0%{background-color:#1ba3de}
