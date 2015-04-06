@@ -54,3 +54,36 @@ block content
                         a(href='products/edit/#{product._id}' title='Edit') Edit
                     td 
                         a(href='products/delete/#{product._id}' title='Delete' onclick='return confirm(\'Are you sure you want to delete this product?\');') Delete
+
+      form.form-horizontal(action='/specials/', method='get')
+          .form-group
+              .col-sm-10
+                label.col-sm-2.control-label
+                  | Day
+                  select#day(name='day')
+                    option(value='All') Everyday
+                    option(value='Monday') Monday
+                    option(value='Tuesday') Tuesday
+                    option(value='Wednesday') Wednesday
+                    option(value='Thursday') Thursday
+                    option(value='Friday') Friday
+                    option(value='Saturday', selected='') Saturday
+                    option(value='Sunday') Sunday
+              .col-sm-10
+                label.col-sm-2.control-label
+                  select(name='feature')
+                    option(value='') All
+                    option(value='Beer', selected='') Beer
+                    option(value='Wine') Drink
+                    option(value='Food') Food
+              .col-sm-10
+                label.col-sm-2.control-label
+                  | Rating
+                  select(name='Sort')
+                    option(value='latest', selected='') 1 star
+                    option(value='name') 2 starts
+                    option(value='name') 3 stars
+                    option(value='name') 4 stars
+                    option(value='toprated') 5 stars
+              .col-sm-10
+                input.button(type='submit', value='Search')

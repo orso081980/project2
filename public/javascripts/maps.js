@@ -51,7 +51,7 @@ function initialize() {
 	var styledMapOptions = {
 		name: 'Custom Style'
 	};
-
+	map.setOptions({ minZoom: 17, maxZoom: 20 });
 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
