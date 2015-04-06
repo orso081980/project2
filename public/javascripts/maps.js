@@ -18,7 +18,7 @@ function initialize() {
 		mapTypeId: MY_MAPTYPE_ID
 	};
 
-	var beaches = [
+	var locs = [
 	['The mansion', 44.389477, -79.688912,  4],
 	['The bank', 44.389466, -79.687620,  5],
 	['McReillys Pub & Restaurant', 44.389389, -79.687035, 3],
@@ -34,20 +34,20 @@ function initialize() {
 
 		for (var i = 0; i < locations.length; i++) {
 			var beach = locations[i];
-			var myLatlng = new google.maps.LatLng(beach[1], beach[2]);
-			var marker = new google.maps.Marker({
-				position: myLatlng,
+			var myLatlng2 = new google.maps.LatLng(beach[1], beach[2]);
+			var marker2 = new google.maps.Marker({
+				position: myLatlng2,
 				map: map,
 				icon: image,
-				title: beach[0],
-				zIndex: beach[3]
 			});
+
 		}
 	}
 
 	map = new google.maps.Map(document.getElementById('map-canvas'),
 		mapOptions);
-	setMarkers(map, beaches);
+	setMarkers(map, locs);
+
 	var styledMapOptions = {
 		name: 'Custom Style'
 	};
@@ -56,33 +56,21 @@ function initialize() {
 
 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
-	// var contentString = '<div id="content">'+
-	// '<div id="siteNotice">'+
-	// '</div>'+
-	// '<h1 id="firstHeading" class="firstHeading">Marco Maffei</h1>'+
-	// '<div id="bodyContent">'+
-	// '<p><b>Yeey</b>, I love <i class="fa fa-weixin"></i><b>web</b>, different <i class="fa fa-university"></i>cultures, <b>laziness</b> sometimes, <b>film</b>, <i class="fa fa-heart"></i> <b>sex</b>,<i class="fa fa-star"></i> <b>women</b>, whatever is <i class="fa fa-slideshare"></i><b>funny</b></p>'+
-	// '<p>This is just an experiment, I love to change default stuff.</p>' +
-	// '<p>Follow me on <a href="https://www.facebook.com/marco.maffei.927"><i class="fa fa-facebook"></i></a>'+
-	// '<p> or on <a href="https://twitter.com/MarcoMaffei3"><i class="fa fa-twitter"></i></a></p>'+
-	// '</div>'+
-	// '</div>';
+	var contentString = '<div id="content">'+'<div id="siteNotice">'+'</div>'+'<h2 id="firstHeading" class="firstHeading">The Mansion</h2>'+'<div id="bodyContent">'+'<p>The Mansion is one of Downtown Barrie’s Nightclubs and Restaurants. Serving lunch and dinner from Friday to Sunday, and entertaining your dance shoes on Friday and Saturday evenings. With events, house parties, live music and so much more, The Mansion is a must for your weekend party.</p>'+'<p><a href="http://downtownbarrie.ca/the-mansion/">'+'The Mansion</a>'+'</p>'+'<br>'+'<p>The product of the day is: #{_id[5521b5aa72538f2f0b4bbca6].description}</p>'+'</div>'+'</div>';
 
-	// var infowindow = new google.maps.InfoWindow({
-	// 	content: contentString,
-	// 	maxWidth: 300
-	// });
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString,
+		maxWidth: 300
+	});
 
-	// var image = 'images/icon3.png';
-	// var marker = new google.maps.Marker({
-	// 	position: myLatlng,
-	// 	map: map,
-	// 	icon: image,
-	// 	title: 'Icon'
-	// });
-	// google.maps.event.addListener(marker, 'click', function() {
-	// 	infowindow.open(map,marker);
-	// });
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		map: map,
+		title: 'Uluru (Ayers Rock)'
+	});
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+	});
 
 }
 

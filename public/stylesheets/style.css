@@ -7,8 +7,22 @@
 	color:white;
 }
 .nav>li>a {
-  color: white;
+	color: white;
 }
 
-@-webkit-keyframes myfirst /* Firefox */
-{0%{background-color:#1ba3de}16%{background-color:#25bdae}34%{background-color:#a06fb0}50%{background-color:#f067a6}66%{background-color:#f79421}84%{background-color:#e6ba20}100%{background-color:#1ba3de}}@-moz-keyframes colors{0%{background-color:#1ba3de}16%{background-color:#25bdae}34%{background-color:#a06fb0}50%{background-color:#f067a6}66%{background-color:#f79421}84%{background-color:#e6ba20}100%{background-color:#1ba3de}}@-ms-keyframes colors{0%{background-color:#1ba3de}
+@-webkit-keyframes myfirst /* Chrome */
+{
+	0%{background-color:#19a0d8}
+	16%{background-color:black}
+	34%{background-color:#e85113}
+	50%{background-color:#efe9e4}
+	
+	100%{background-color:#f0e4d3}
+}
+@-moz-keyframes colors{
+	0%{background-color:#19a0d8}
+	16%{background-color:#black}
+	34%{background-color:#e85113}
+	50%{background-color:#efe9e4}
+	100%{background-color:#f0e4d3}
+}
