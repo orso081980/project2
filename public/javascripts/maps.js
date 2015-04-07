@@ -51,7 +51,7 @@ function initialize() {
 	var styledMapOptions = {
 		name: 'Custom Style'
 	};
-	map.setOptions({ minZoom: 17, maxZoom: 20 });
+	map.setOptions({ minZoom: 13, maxZoom: 20 });
 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
@@ -66,7 +66,7 @@ function initialize() {
 	var marker = new google.maps.Marker({
 		position: myLatlng,
 		map: map,
-		title: 'Uluru (Ayers Rock)'
+		title: 'The mansion'
 	});
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.open(map,marker);

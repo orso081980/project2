@@ -9,19 +9,27 @@ block content
             div(class='col-lg-8 col-lg offset-2')
                 div(class='row control-group')
                     label Venue
-                    input(name='venue', required, placeholder='venue')
+                    input(name='venue', required, placeholder='Club')
                 div(class='row control-group')
                     label Day
-                    input(name='day', required, placeholder='day')
+                    select(name='selectpick', required, placeholder='day')
+                        option(value='sunday') Sunday
+                        option(value='monday') Monday
+                        option(value='tuesday') Tuesday
+                        option(value='wednesday') Wednesday
+                        option(value='thursday') Thursday
+                        option(value='friday') Friday
+                        option(value='saturnday') Saturnday
+                        option(value='everyday') Everyday
                 div(class='row control-group')
                     label Price
-                    input(name='price', required, placeholder='price', type='number')
+                    input(name='price', required, placeholder='$', type='number')
                 div(class='row control-group')
                     label Description
-                    textarea(name='description', required, placeholder='description')
+                    textarea(name='description', required, placeholder='Description')
                 div(class='row control-group')
                     label Rating
-                    input(name='rating', required, placeholder='rating', type='number', min="1" max="5")
+                    input(name='rating', required, placeholder='Rating', type='number', min="1" max="5")
                 div(class='row control-group')
                     label type
                     input(name='type', required, placeholder='type')

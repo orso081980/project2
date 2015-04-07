@@ -46,7 +46,7 @@ router.post('/products/edit/:id', function (req, res, next) {
     var product = {
         _id: req.body.id,
         venue: req.body.venue,
-        day: req.body.day,
+        day: req.body.selectpick,
         price: req.body.price,
         description: req.body.description,
         rating: req.body.rating,
@@ -76,7 +76,7 @@ router.post('/products/add', function (req, res, next) {
     // use the Product model to insert a new product
     Product.create({
         venue: req.body.venue,
-        day: req.body.day,
+        day: req.body.selectpick,
         price: req.body.price,
         description: req.body.description,
         rating: req.body.rating,

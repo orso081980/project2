@@ -12,13 +12,21 @@ block content
                     input(name='venue', required, placeholder='venue', value='#{product.venue}')
                 div(class='row control-group')
                     label Day
-                    textarea(name='day', required, placeholder='day', value='#{product.day}')
+                    select(name='selectpick', required, placeholder='day')
+                        option(value='sunday') Sunday
+                        option(value='monday') Monday
+                        option(value='tuesday') Tuesday
+                        option(value='wednesday') Wednesday
+                        option(value='thursday') Thursday
+                        option(value='friday') Friday
+                        option(value='saturnday') Saturnday
+                        option(value='everyday') Everyday
                 div(class='row control-group')
                     label Price
                     input(name='price', required, placeholder='price', type='number' value='#{product.price}')
                 div(class='row control-group')
                     label Description
-                    input(name='description', required, placeholder='description', value='#{product.description}')
+                    textarea(name='description', required, placeholder='description', value='#{product.description}')
                 div(class='row control-group')
                     label Rating
                     input(name='rating', required, placeholder='rating', type='number', value='#{product.venue}')
