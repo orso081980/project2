@@ -15,18 +15,16 @@
 }
 @-webkit-keyframes myfirst /* Chrome */
 {
-	0%{background-color:#19a0d8}
-	25%{background-color:black}
-	50%{background-color:#e85113}
-	75%{background-color:#efe9e4}
-	100%{background-color:#f0e4d3}
+	0%{background-color:#2281E5}
+	33%{background-color:#a4c9c6}
+	66%{background-color:#EA8853}
+	100%{background-color:red}
 }
 @-moz-keyframes colors{
-	0%{background-color:#19a0d8}
-	25%{background-color:#black}
-	50%{background-color:#e85113}
-	75%{background-color:#efe9e4}
-	100%{background-color:#f0e4d3}
+	0%{background-color:#2281E5}
+	33%{background-color:#a4c9c6}
+	66%{background-color:#EA8853}
+	100%{background-color:red}
 }
 label {
 	font-size: 2rem;
@@ -48,4 +46,12 @@ label {
   background-color: #EA8853;
   border-color: #EA8853;
   color: #ffffff;
+}
+.col-sm-10
+{
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 77px;
+  top: 78px;
 }
