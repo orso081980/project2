@@ -3,10 +3,18 @@
 block content
     div(class='container')
         div(class='collapse navbar-collapse')
-            a(href='/products', title='List Products') List Products
-        h2 Add a New Product
-        form(method='post', action='/products/add')
+            a(href='/products', title='List Products') Main Page
+        h2 Add a New Club
+        form(method='post', action='/products/add', enctype='multipart/form-data')
             div(class='col-lg-8 col-lg offset-2')
+                div(class='row control-group')
+                    label File Upload
+                        fieldset
+                            label(for='title') Title
+                            input(name='title')
+                        fieldset
+                            label(for='upload') Upload
+                            input(type='file' name='upload')
                 div(class='row control-group')
                     label Venue
                     input(name='venue', required, placeholder='Club')
@@ -26,11 +34,11 @@ block content
                     input(name='price', required, placeholder='$', type='number')
                 div(class='row control-group')
                     label Description
-                    textarea(name='description', required, placeholder='Description')
+                    input(name='description', required, placeholder='Description')
                 div(class='row control-group')
                     label Rating
                     input(name='rating', required, placeholder='Rating', type='number', min="1" max="5")
                 div(class='row control-group')
-                    label type
-                    input(name='type', required, placeholder='type')
+                    label Type
+                    input(name='type', required, placeholder='Type')
                 input(type='submit', value='Add Product')

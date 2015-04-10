@@ -1,0 +1,10 @@
+﻿extends layout
+
+block content
+	h1 Image Gallery
+	a(href='upload-image', title='New Upload') New Upload
+	each upload, i in uploads
+		div
+			img(title='#{upload.title}', src='/images/#{upload.fileName}', width='300')
+			p #{upload.title}
+			Upload Date #{upload.uploadDate}

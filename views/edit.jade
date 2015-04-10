@@ -8,6 +8,9 @@ block content
         form(method='post', action='/products/edit/#{product._id}')
             div(class='col-lg-8 col-lg offset-2')
                 div(class='row control-group')
+                    label File Upload
+                    input(name='upload', type="file", required, placeholder='upload', value='#{product.uploadFilename}')
+                div(class='row control-group')
                     label Venue
                     input(name='venue', required, placeholder='venue', value='#{product.venue}')
                 div(class='row control-group')

@@ -1,90 +1,93 @@
 ﻿extends layout
 
 block content
-
-    nav.navbar.navbar-inverse.navbar-fixed-top
-        .navbar-header
-          a.navbar-brand(href='#') Hanging around Barrie
-        #navbar.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li.active
-              a(href='/about.html', title='About me') About me
-            li
-              a(href='#developing') Developing and goals
-            li
-              a(href='#signIn') Sign in
-            li
-              a(href='#admin') Admin
-      .jumbotron
-        .container
-          ul.nav.navbar-nav
-            li.active
-              a(href='#') Events
-            li
-              a(href='#') Clubs
-            li
-              a(href='#') Deals of the week
-            li
-              a(href='#') Review
-        div(id='map-canvas')
-      .col-md-8
-        a(href='/products/add', title='Add Product') Add Offers 
-        .collapse.navbar-collapse
-        h2 Offers and specials
-        table.table
-          thead
-              th Venue
-              th Day
-              th Price
-              th Description
-              th Rating
-              th Type
-              th Edit
-              th Delete
-          tbody
-            each product, i in products
-                tr
-                    td #{product.venue}
-                    td #{product.day}
-                    td #{product.price}
-                    td #{product.description}
-                    td #{product.rating}
-                    td #{product.type}
-                    td 
-                        a(href='products/edit/#{product._id}' title='Edit') Edit
-                    td 
-                        a(href='products/delete/#{product._id}' title='Delete' onclick='return confirm(\'Are you sure you want to delete this product?\');') Delete
-      .col-xs-6.col-sm-3
-        form.form-horizontal(action='/products', method='get')
-          .form-group
-            .col-sm-10
-              label.col-sm-2.control-label
-                | Day
-                select(name='day')
-                    option(value='Everyday') Everyday
-                    option(value='Monday') Monday
-                    option(value='Tuesday') Tuesday
-                    option(value='Wednesday') Wednesday
-                    option(value='Thursday') Thursday
-                    option(value='Friday') Friday
-                    option(value='Saturday', selected='') Saturday
-                    option(value='Sunday') Sunday
-            .col-sm-10
-              label.col-sm-2.control-label
-                | Type
-                select(name='feature')
-                  option(value='All') All
-                  option(value='Beer', selected='') Beer
-                  option(value='Wine') Drink
-                  option(value='Food') Food
-            .col-sm-10
-              label.col-sm-2.control-label
-                | Rating
-                select(name='Sort')
-                  option(value='1', selected='') 1 star
-                  option(value='2') 2 starts
-                  option(value='3') 3 stars
-                  option(value='4') 4 stars
-                  option(value='5') 5 stars
-            .col-sm-10
-              input.button(type='submit', value='Search')
+  nav.navbar.navbar-inverse.navbar-fixed-top
+      .navbar-header
+        a.navbar-brand(href='#') Hanging around Barrie
+      #navbar.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a(href='/about.html', title='About me') About me
+          li
+            a(href='http://slides.com/marcomaffei/hanging-around-barrie#/') Developing and goals
+          li
+            a(href='#signIn') Sign in
+          li
+            a(href='#admin') Admin
+        img(src="images/logo.svg" width='70', height='60')
+    .jumbotron
+      .container
+        ul.nav.navbar-nav
+          li.active
+            a(href='#') Events
+          li
+            a(href='#') Clubs
+          li
+            a(href='#') Deals of the week
+          li
+            a(href='#') Review
+      div(id='map-canvas')
+    .col-md-8
+      a(href='/products/add', title='Add Product') Add Offers 
+      .collapse.navbar-collapse
+      h2 Offers and specials
+      table.table
+        thead
+            th Logo
+            th Venue
+            th Day
+            th Price
+            th Description
+            th Rating
+            th Type
+            th Edit
+            th Delete
+        tbody
+          each product, i in products
+              tr
+                td 
+                 img(src='./uploads/#{product.uploadFilename}')
+                td #{product.venue}
+                td #{product.day}
+                td #{product.price}
+                td #{product.description}
+                td #{product.rating}
+                td #{product.type}
+                td 
+                    a(href='products/edit/#{product._id}' title='Edit') Edit
+                td 
+                    a(href='products/delete/#{product._id}' title='Delete' onclick='return confirm(\'Are you sure you want to delete this product?\');') Delete
+    .col-xs-6.col-sm-3
+      form.form-horizontal(action='/products/req', method='post')
+        .form-group
+          .col-sm-10
+            label.col-sm-2.control-label
+              | Day
+              select(name='day')
+                  option(value='Everyday') Everyday
+                  option(value='Monday') Monday
+                  option(value='Tuesday') Tuesday
+                  option(value='Wednesday') Wednesday
+                  option(value='Thursday') Thursday
+                  option(value='Friday') Friday
+                  option(value='Saturday', selected='') Saturday
+                  option(value='Sunday') Sunday
+          .col-sm-10
+            label.col-sm-2.control-label
+              | Type
+              select(name='feature')
+                option(value='All') All
+                option(value='Beer', selected='') Beer
+                option(value='Wine') Drink
+                option(value='Food') Food
+          .col-sm-10
+            label.col-sm-2.control-label
+              | Rating
+              select(name='Sort')
+                option(value='1', selected='') 1 star
+                option(value='2') 2 starts
+                option(value='3') 3 stars
+                option(value='4') 4 stars
+                option(value='5') 5 stars
+          .col-sm-10
+            input.button(type='submit', value='Search')

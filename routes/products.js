@@ -5,6 +5,9 @@ var router = express.Router();
 // add db & model dependencies
 var mongoose = require('mongoose');
 var Product = require('../models/product');
+var formidable = require('formidable');
+var fs = require('fs-extra');
+var util = require('util');
 
 // interpret GET /products - show product listing */
 router.get('/products', function (req, res, next) {
@@ -73,23 +76,59 @@ router.get('/products/add', function (req, res, next) {
 // POST /products/add - save new product
 router.post('/products/add', function (req, res, next) {
 
-    // use the Product model to insert a new product
-    Product.create({
-        venue: req.body.venue,
-        day: req.body.selectpick,
-        price: req.body.price,
-        description: req.body.description,
-        rating: req.body.rating,
-        type: req.body.type
-    }, function (err, Product) {
-        if (err) {
-            console.log(err);
-            res.render('error', { error: err }) ;
+    console.log("hey...what's happening here...........")
+    var title;
+    console.log('inside post venue      ' +req.body.venue);
+
+    var form = new formidable.IncomingForm();
+    var productAdd;
+
+    form.parse(req, function(err, fields, files) {
+
+        productAdd = {
+            venue: fields.venue,
+            day: fields.selectpick,
+            price: fields.price,
+            description: fields.description,
+            rating: fields.rating,
+            uploadFilename: files.upload.name,
+            type: fields.type 
         }
-        else {
-            console.log('Product saved ' + Product);
-            res.render('added', { product: Product.title });
-        }
+        console.log('inside the form parse===>' + productAdd);
+    });
+    
+    form.on('end', function(fields, files) {
+
+        var temp_path = this.openedFiles[0].path;
+        
+        var file_name = this.openedFiles[0].name;
+
+        console.log('uploaded file ====>' + file_name);
+        
+        var new_location = 'public/uploads/'; 
+        console.log(new_location + file_name);
+        
+        fs.copy(temp_path, new_location + file_name, function(err) {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                console.log('upload successful....creating the product into the database');
+
+                console.log('creating the product===>' + productAdd);
+                // use the Product model to insert a new product
+                Product.create(productAdd, function (err, Product) {
+                    if (err) {
+                        console.log(err);
+                        res.render('error', { error: err }) ;
+                    }
+                    else {
+                        console.log('Product saved ' + Product);
+                        res.render('added', { product: Product.title });
+                    }
+                });
+            }// end of else statement
+        }); // end of copy
     });
 });
 
@@ -122,6 +161,9 @@ router.get('/products/delete/:id', function (req, res, next) {
         }
     });
 });
+
+// POST /products/req - retrieve a row from database */
+
 
 // make controller public
 module.exports = router;

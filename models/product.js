@@ -8,7 +8,8 @@ var ProductSchema = new mongoose.Schema({
     price: Number,
     description: String,
     rating: Number,
-    type: String
+    type: String,
+    uploadFilename: String
 });
 
 // make the model public so other files can access it

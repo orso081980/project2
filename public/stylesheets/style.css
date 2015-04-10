@@ -9,6 +9,7 @@
 }
 .nav>li>a {
 	color: white;
+	font-weight: bold;
 }
 .nav>li>a:hover {
 	color:black;
@@ -34,24 +35,39 @@ label {
 	margin-bottom: 0;
 }
 .button {
-  top: 22px;
-  line-height: normal;
-  margin: 0 0 1.25rem;
-  position: relative;
-  text-align: center;
-  padding-top: 1rem;
-  padding-right: 2rem;
-  padding-bottom: 1.0625rem;
-  padding-left: 2rem;
-  background-color: #EA8853;
-  border-color: #EA8853;
-  color: #ffffff;
+	top: 22px;
+	line-height: normal;
+	margin: 0 0 1.25rem;
+	position: relative;
+	text-align: center;
+	padding-top: 1rem;
+	padding-right: 2rem;
+	padding-bottom: 1.0625rem;
+	padding-left: 2rem;
+	background-color: #EA8853;
+	border-color: #EA8853;
+	color: #ffffff;
 }
 .col-sm-10
 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 77px;
-  top: 78px;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 77px;
+	top: 78px;
+}
+
+td>img {
+	width: 100px;
+	height:100px;
+}
+a.navbar-brand {
+	font-size: 2em;
+}
+#navbar > img {
+	float: right;
+}
+footer {
+	position: relative;
+	top: 119px;
 }

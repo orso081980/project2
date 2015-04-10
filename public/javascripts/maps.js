@@ -56,7 +56,7 @@ function initialize() {
 
 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
-	var contentString = '<div id="content">'+'<div id="siteNotice">'+'</div>'+'<h2 id="firstHeading" class="firstHeading">The Mansion</h2>'+'<div id="bodyContent">'+'<p>The Mansion is one of Downtown Barrie’s Nightclubs and Restaurants. Serving lunch and dinner from Friday to Sunday, and entertaining your dance shoes on Friday and Saturday evenings. With events, house parties, live music and so much more, The Mansion is a must for your weekend party.</p>'+'<p><a href="http://downtownbarrie.ca/the-mansion/">'+'The Mansion</a>'+'</p>'+'<br>'+'<p>The product of the day is: #{_id[5521b5aa72538f2f0b4bbca6].description}</p>'+'</div>'+'</div>';
+	var contentString = '<div id="content">'+'<div id="siteNotice">'+'</div>'+'<h2 id="firstHeading" class="firstHeading">The Mansion</h2>'+'<div id="bodyContent">'+'<p>The Mansion is one of Downtown Barrie’s Nightclubs and Restaurants. Serving lunch and dinner from Friday to Sunday, and entertaining your dance shoes on Friday and Saturday evenings. With events, house parties, live music and so much more, The Mansion is a must for your weekend party.</p>'+'<p><a href="http://downtownbarrie.ca/the-mansion/">'+'The Mansion</a>'+'</p>'+'</div>'+'</div>';
 
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString,
