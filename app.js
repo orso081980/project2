@@ -69,7 +69,8 @@ app.use('/uploads', uploads)
 
 // db 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/lesson6');
+mongoose.connect('mongodb://heroku_app35620707:18081980Mr@ds061751.mongolab.com:61751/heroku_app35620707');
+
 
 // tell the application which route / controller to use for product requests
 var products = require('./routes/products');
