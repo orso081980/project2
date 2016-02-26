@@ -1,44 +1,49 @@
 ﻿extends layout
 
 block content
-    div(class='container')
-        div(class='collapse navbar-collapse')
-            a(href='/products', title='List Products') Main Page
-        h2 Add a New Club
-        form(method='post', action='/products/add', enctype='multipart/form-data')
-            div(class='col-lg-8 col-lg offset-2')
-                div(class='row control-group')
-                    label File Upload
-                        fieldset
-                            label(for='title') Title
-                            input(name='title')
-                        fieldset
-                            label(for='upload') Upload
-                            input(type='file' name='upload')
-                div(class='row control-group')
-                    label Venue
-                    input(name='venue', required, placeholder='Club')
-                div(class='row control-group')
-                    label Day
-                    select(name='selectpick', required, placeholder='day')
-                        option(value='sunday') Sunday
-                        option(value='monday') Monday
-                        option(value='tuesday') Tuesday
-                        option(value='wednesday') Wednesday
-                        option(value='thursday') Thursday
-                        option(value='friday') Friday
-                        option(value='saturnday') Saturnday
-                        option(value='everyday') Everyday
-                div(class='row control-group')
-                    label Price
-                    input(name='price', required, placeholder='$', type='number')
-                div(class='row control-group')
-                    label Description
-                    input(name='description', required, placeholder='Description')
-                div(class='row control-group')
-                    label Rating
-                    input(name='rating', required, placeholder='Rating', type='number', min="1" max="5")
-                div(class='row control-group')
-                    label Type
-                    input(name='type', required, placeholder='Type')
-                input(type='submit', value='Add Product')
+    .blog-masthead
+        .container-fluid
+            a.navbar-brand(href='/products') Main Page
+    .jumbotron
+        .container
+            h2 Add a New Offer
+            form(method='post', action='/products/add', enctype='multipart/form-data')
+                    div(class='row')
+                        label
+                            fieldset
+                                label(for='title') Title
+                                input(name='title')
+                            fieldset
+                                label(for='upload') Picture
+                                input(type='file' name='upload')
+                    div(class='row')
+                        label Venue
+                        input(name='venue', required, placeholder='Club')
+                    div(class='row')
+                        label Day
+                        select(name='selectpick', required, placeholder='day')
+                            option(value='sunday') Sunday
+                            option(value='monday') Monday
+                            option(value='tuesday') Tuesday
+                            option(value='wednesday') Wednesday
+                            option(value='thursday') Thursday
+                            option(value='friday') Friday
+                            option(value='saturnday') Saturday
+                            option(value='everyday') Everyday
+                    div(class='row')
+                        label Price
+                        input(name='price', required, placeholder='$', type='number')
+                    div(class='row')
+                        label Description
+                        input(name='description', required, placeholder='Description')
+                    div(class='row')
+                        label Rating
+                        input(name='rating', required, placeholder='Rating', type='number', min="1" max="5")
+                    div(class='row')
+                        label Type
+                        select(name='selectpick', required, placeholder='type')
+                            option(value='beer') Beer
+                            option(value='food') Food
+                            option(value='cocktail') Cocktail
+                    input(type='submit' class='button', value='Add Product')
+    include footer
